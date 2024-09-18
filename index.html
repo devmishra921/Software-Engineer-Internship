@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik Traders</title>
+    <style>
+         #newsheet{
+                    width: 600px;
+                    height: 550px;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    margin-left: 400px;
+                    margin-top: 20px;
+                    overflow: auto;
+                }
+                #header{
+                    width: auto;
+                    height: 50px;
+                    background-color: rgba(11, 12, 83, 0.836);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    margin: 5px 5px;
+                    border-radius: 5px;
+                }
+                .inputtext{
+                    margin-left: 10px;
+                    font-display: bold;
+                }
+                input[type="text"], input[type="tel"], input[type="date"], input[type="file"], select[name="status"]{
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    width: 550px;
+                    height: 25px;
+                    border: 1px solid #ccc;
+                }
+                h3{
+                    margin: 0px;
+                    padding: 0px;
+                    margin-left: 15px;
+                    margin-top: 13px;
+                    font-family: sans-serif;
+                    font-size: small;
+                }
+                textarea[name="comment"]{
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    width: 550px;
+                    height: 50px;
+                    border: 1px solid #ccc;
+                }
+                select[name="selcte"]{
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    width: 550px;
+                    height: 25px;
+                    border: 1px solid #ccc;
+                }
+                button[type="submit"]{
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    width: 550px;
+                    height: 25px;
+                    border: 1px solid #ccc;
+                    margin-top: 13px;
+                    margin-bottom: 15px;
+                    background-color:  rgba(11, 12, 83, 0.836);
+                    color: white;
+                    font-family: sans-serif;
+                    font-size: small;
+                }
+                textarea[name="report_issues"], textarea[name="client_notes"]{
+                    margin-left: 15px;
+                    border-radius: 5px;
+                    width: 550px;
+                    height: 50px;
+                    border: 1px solid #ccc;
+                }
+    </style>
+</head>
+<body>
+    <div id="newsheet">
+        <div id="header">
+            <h2> CREATE NEW JOB SHEET </h2>
+        </div>
+        <form action="insert.php" method="POST" enctype="multipart/form-data">
+            <h3> Client Name: </h3>
+            <input type="text" name="client_name" required>
+
+            <h3> Contact Info (Phone 10nos): </h3>
+            <input type="tel" name="contact_info" maxlength="10" pattern="[0-9]{10}" required>
+
+            <h3> Received Date: </h3>
+            <input type="date" name="received_date" required>
+
+            <h3> Inventory Received: </h3>
+            <input type="text" name="inventory_received" required>
+
+            <h3> Upload Inventory Image/Document/Video: </h3>
+            <input type="file" name="inventory_file">
+
+            <h3> Report Issues: </h3>
+            <textarea name="report_issues" rows="2" cols="72"></textarea>
+
+            <h3> Client Notes: </h3>
+            <textarea name="client_notes" rows="2" cols="72"></textarea>
+
+            <h3> Assigned Technician: </h3>
+            <input type="text" name="assigned_technician" required>
+
+            <h3> Deadline: </h3>
+            <input type="date" name="deadline" required>
+
+            <h3> Estimated Amount: </h3>
+            <input type="text" name="estimated_amount" required>
+
+            <h3> Status: </h3>
+            <select name="status" required>
+                <option value="Pending">Pending</option>
+                <option value="In-progress">In-progress</option>
+                <option value="Closed">Closed</option>
+                <option value="Assigned">Assigned</option>
+            </select>
+
+            <button type="submit"> Save Job Sheet </button>
+        </form>
+    </div>
+</body>
+</html>
